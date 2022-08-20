@@ -1,0 +1,59 @@
+info and help commands:
+!ping "
+!whoisyourcreator? "
+!whatareyou! "
+!help "
+!whatdoesyournamestandfor? "
+!dashslinks " 
+!updateinfo "
+
+Gif commands:
+!slap *
+!hug *
+!kiss *
+!lick *
+!pat *
+!poke *
+!holdhandswith *
+!tickle *
+!highfivewith *
+!bite *
+!cuddle *
+!kick *
+!cuddle *
+
+art commands:
+!refsheet "  !refsheet_sona !refsheet_alex !refsheet_colten !refsheet_henna
+
+other:
+!spam
+
+secret commands:
+!apt-get_moo
+mentioning the bot
+
+client.on('message' , async msg => {
+	let args = msg.content.split(" ").slice(1)
+	
+	if (msg.content.toLowerCase().startswith("!gif")) {
+		if (args.length < 1) return msg.channel.send(`-Please put something after !gif to look up`, {code: "py"})
+	    let res = await got(`https://api.giphy,xom/v1/gifs/random?api_key=${insert api key here}&tag=$(encodeURIComponent(args.join(" "))}`, {json: true})
+        if (!res || !res.body || !res.body.data) return msg.channel.send("@failed to find a Gif that matched what you asked for!", {code: "py"})
+			
+		let embed = new Discord.RichEmbed()
+		.setImage(res.body.data.image_url)
+		.setAuthor(msg.author.tag, msg.author.displayAvatarURL)
+        
+		.msg.channel.send({embed: embed});
+		.catch((err) => {
+		return err;
+        })
+      }	
+}) 	
+
+		const embed = new Discord.Embed()
+		.setImage(res.body.data.image_url)
+		.setAuthor(msg.author.tag, msg.author.displayAvatarURL)
+
+" = has been added to !help
+* = need to be made

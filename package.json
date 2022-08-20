@@ -1,0 +1,13 @@
+{
+  "name": "DSLB",
+  "version": "1.0.0",
+  "description": "Dashys Special Little Bot",
+  "main": "bot.js",
+  "author": "CutThroat",
+  "dependencies": {
+    "cleverbot-node": "^0.3.11",
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "got": "^8.3.2",
+    "winston": "^3.0.0"
+  }
+}
